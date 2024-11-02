@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function countRussianVowels(str) {
+            const str1 = 'аеёиоуыэюяАЕЁИОУЫЭЮЯ';
+            let count = 0;
+            for (let perebor of str) {
+                if (str1.includes(perebor)) {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+        const userInput = prompt("Введите строку:");
+        if (userInput !== null) {
+            console.log("Количество русских гласных букв:", countRussianVowels(userInput));
+        }
+    </script>
+
+</body>
+
+</html>

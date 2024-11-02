@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function anketa() {
+            let name;
+            let age;
+            let gender;
+
+
+            while (true) {
+                name = prompt("Введите ваше имя:");
+                if (name !== Number && name !== "") {
+                    break;
+                } else {
+                    console.log("Имя не может быть пустым. Пожалуйста, попробуйте снова.");
+                }
+            }
+
+
+            while (true) {
+                age = prompt("Введите ваш возраст:");
+                if (age && !isNaN(age) && age > 0 && age < 120) {
+                    break;
+                } else {
+                    console.log("Пожалуйста, введите корректный возраст (число от 1 до 119).");
+                }
+            }
+
+            gender = confirm("Ваш пол мужской?");
+
+
+            let message = `Имя: ${name}\nВозраст: ${age}\nВаш пол мужской?: ${gender ? 'Да' : 'Нет'}`;
+
+            alert(message);
+        }
+
+
+        anketa();
+    </script>
+</body>
+
+</html>

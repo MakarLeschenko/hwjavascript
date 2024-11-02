@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function pereborArray(arr) {
+            const result = [];
+            let currentArray = arr;
+
+            while (currentArray.length > 0) {
+                const item = currentArray.pop();
+
+                if (Array.isArray(item)) {
+
+                    currentArray.push(...item);
+                } else {
+
+                    result.push(item);
+                }
+            }
+
+            return result.reverse();
+        }
+
+        const input = [5, 7, [4, [2], 8, [1, 3], 2], [9, []], 1, 8];
+        const perebor = pereborArray(input)
+        let sum = 0
+        for (let i = 0; i < perebor.length; i++) {
+            sum += perebor[i];
+        }
+        console.log(sum)
+    </script>
+</body>
+
+</html>
