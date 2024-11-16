@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function countRussianVowels(str) {
+            const str1 = 'аеёиоуыэюяАЕЁИОУЫЭЮЯ';
+            let count = 0
+            Array.from(str).forEach(perebor =>{
+            if (str1.includes(perebor)) {
+                    count++;
+                }
+            })
+
+            return count;
+        }
+
+        function ff(str){
+            const str1 = 'аеёиоуыэюяАЕЁИОУЫЭЮЯ';
+           let count = Array.from(str).filter(perebor =>
+                str1.includes (perebor)).length
+                return count
+        }
+
+        function ff2(str){
+            const str1 = 'аеёиоуыэюяАЕЁИОУЫЭЮЯ';
+            return Array.from(str).reduce((num,perebor) =>{
+            if (str1.includes(perebor)) {
+                return num + 1
+            }
+            return num
+        }, 0);
+        }
+
+        const userInput = prompt("Введите строку:");
+        if (userInput !== null) {
+            const count1 = countRussianVowels(userInput)
+            const count2 = ff(userInput)
+            const count3 = ff2(userInput)
+            console.log("Количество русских гласных букв(forEach):", countRussianVowels(userInput));
+            console.log("Количество русских гласных букв(filter):", ff(userInput));
+            console.log("Количество русских гласных букв(reduce):", count3);
+            
+            
+        }
+    </script>
+
+</body>
+
+</html>
