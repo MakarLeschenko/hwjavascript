@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           let = escapeHtml = (text) => {
+        return text
+            .replace(/&/g, '&amp;')   
+            .replace(/</g, '&lt;')    
+            .replace(/>/g, '&gt;')    
+            .replace(/"/g, '&quot;') 
+            .replace(/'/g, '&apos;'); 
+    }
+
+        let buildWrapper = (tag) => {
+            return (text) => {
+                const escapedText = escapeHtml(text);
+           return `<${tag}>${escapedText}</${tag}>`
+        }
+        }
+        let wrapH1 = buildWrapper("H1");
+
+        let wrapP = buildWrapper("P");
+        console.log(wrapH1('СТИХИ'))
+        console.log(wrapP('Однажды в студёную зимнюю пору'))
+        console.log( wrapP("Вкусные M&M's") );
+    </script>
+</body>
+</html>
